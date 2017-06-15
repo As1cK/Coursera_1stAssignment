@@ -1,10 +1,10 @@
 /******************************************************************************
- * Copyright (C) 2017 by Cesar Munayco
+ * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are 
  * permitted to modify this and use it to learn about the field of embedded
- * software. Cesar Munayco not liable for any
+ * software. Alex Fosdick and the University of Colorado are not liable for any
  * misuse of this material. 
  *
  *****************************************************************************/
@@ -15,7 +15,7 @@
  * This file contains the main code for the Statistical Analysis Required for peer review
  *
  * @author Cesar Munayco
- * @date 06/11/17
+ * @date 06/15/17
  *
  */
 #ifndef __STATS_H__
@@ -24,7 +24,6 @@
  
  /* 
 	---------------------------------------------------------------------- 	
-	print_array function	
 	@brief prints elements of the array
 	
 	@param unsigned char a[] : enter array name here
@@ -64,69 +63,46 @@
 */
 	unsigned char find_minimum(unsigned char a[],unsigned int size);
 	//----------------------------------------------------------------------
- 
-
-void print_array(unsigned char a[], int size){
- int j;
- for(j=0; j<size-1; j++) {
-	printf ("%d, ", a[j]);
- }
- printf ("%d. ", a[size-1]);
-}
-
-unsigned char find_maximum(unsigned char a[],unsigned int size) {
-	unsigned char j;
-	unsigned char max_val = 0;
-	for (j=0; j<size; j++){
-		if (a[j] > max_val){
-			max_val = a[j];
-		}
-	}
-	return max_val;	
-}
-
-unsigned int find_mean(unsigned char a[], unsigned int size){
-	unsigned int j;
-	unsigned int mean_val = 0;
-	unsigned int sum = 0;
-	for (j=0; j<size; j++){
-		sum = sum + a[j];
-		}
-	mean_val = sum/size;
-	return mean_val;	
-	}
-
-unsigned char find_minimum(unsigned char a[], unsigned int size){
-	unsigned char j;
-	unsigned char min_val;
-	if (a[0] > a[1]){
-			min_val = a[1];
-		}
-		else 
-			min_val = a[0];
-	//------------------------------//
-	for (j=0; j<size; j++){
-		if (a[j] < min_val){
-			min_val = a[j];
-		}
-	}
-	return min_val;		
+ /*	sort_array function
+ 	
+	@brief sorts the array in descending order 
 	
-}
-
-void print_statistics(unsigned char a[], unsigned int b){
-	unsigned char max,min = 0;
-	unsigned int mean = 0;
-	min = find_minimum(a, b);
-	printf("Minimum Value is: %d", min);
-	printf("\n----------------------------------------------\n");
-	max = find_maximum(a, b);
-	printf("Maximum Value is: %d", max);
-	printf("\n----------------------------------------------\n");
-	mean = find_mean(a, b);
-	printf("Mean Value is: %d", mean);
-	printf("\n----------------------------------------------\n");
+	@param unsigned char a[] : enter array name here
+	@para int size : enter array size here
+	@return Sorted array in descending order
+*/
+	unsigned char sort_array(unsigned char a[], unsigned int size);
+	//----------------------------------------------------------------------
+ /*	find_median function
+ 	
+	@brief finds the median value from the elements of the array
 	
-}
+	@param unsigned char a[] : enter array name here
+	@para int size : enter array size here
+	@return The median value in the array
+*/
+	unsigned char find_median(unsigned char a[], unsigned int size);
+	//----------------------------------------------------------------------
 
 #endif /* __STATS_H__ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
